@@ -52,6 +52,7 @@ class AppController
   	MyDecorator.new resource
   end
 end
+```
 
 If the resource and controller do not have a `decorate` method the resource will not be decorated.
 
