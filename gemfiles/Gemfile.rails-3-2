@@ -1,0 +1,2 @@
+gem 'actionpack', '~> 3.2.0'
+gem 'minitest', '< 5.0'

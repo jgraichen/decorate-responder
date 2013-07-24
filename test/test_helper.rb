@@ -14,8 +14,8 @@ require 'decorate-responder'
 
 Responders::Routes = ActionDispatch::Routing::RouteSet.new
 Responders::Routes.draw do
-  match '/index' => 'app#index'
-  match '/ex' => 'explicit_decorate#index'
+  get '/index' => 'app#index'
+  get '/ex' => 'explicit_decorate#index'
 end
 
 class ActiveSupport::TestCase
