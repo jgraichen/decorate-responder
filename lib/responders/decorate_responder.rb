@@ -5,7 +5,7 @@ module Responders
       super
     end
 
-    def decorate_resource(res)
+    def decorate_resource(res
       return controller.decorate(res) if controller.respond_to? :decorate
       return res.decorate if res.respond_to? :decorate
       res

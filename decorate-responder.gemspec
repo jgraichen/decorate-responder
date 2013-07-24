@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{A Rails responder to decorate resources.}
   gem.summary       = %q{A Rails responder to decorate resources.}
   gem.homepage      = ""
+  gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

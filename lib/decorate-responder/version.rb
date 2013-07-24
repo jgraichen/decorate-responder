@@ -2,7 +2,7 @@ module DecorateResponder
   module VERSION
     MAJOR = 1
     MINOR = 0
-    PATCH = 0
+    PATCH = 1
     STAGE = nil
 
     def self.to_s
