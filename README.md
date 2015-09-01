@@ -16,7 +16,7 @@ Or install it yourself as:
 
     $ gem install decorate-responder
 
-You will also need a decorator gem like [draper](drapergem/draper) or your own decorator implementation.
+You will also need a decorator gem like [draper](https://github.com/drapergem/draper) or your own decorator implementation.
 
 ## Usage
 
@@ -40,7 +40,7 @@ class MyController < ApplicationController
 end
 ```
 
-If you're using a decorator gem such as [draper](drapergem/draper) that injects a `decorate` method into your resources they will get decorated automatically.
+If you're using a decorator gem such as [draper](https://github.com/drapergem/draper) that injects a `decorate` method into your resources they will get decorated automatically.
 
 You can also explicitly decorate your resources by adding a `decorate` method to your controller:
 
