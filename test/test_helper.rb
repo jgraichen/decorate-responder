@@ -8,6 +8,9 @@ ENV["RAILS_ENV"] = "test"
 
 require 'active_support'
 require 'action_controller'
+if ENV['RAILS_VERSION'] >= '4.2'
+  require 'responders'
+end
 require 'draper'
 
 require 'decorate-responder'
