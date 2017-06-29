@@ -1,6 +1,6 @@
 module Responders
   module DecorateResponder
-    def to_format
+    def respond
       @resource = decorate_resource(resource)
       super
     end
