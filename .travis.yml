@@ -1,11 +1,12 @@
-language: ruby
 sudo: false
+dist: trusty
+cache: bundler
+language: ruby
 rvm:
-  - '2.2'
-  - '2.1'
-  - '2.0'
-  - 1.9.3
-env:
-  - RAILS_VERSION=4.0
-  - RAILS_VERSION=4.1
-  - RAILS_VERSION=4.2
+  - '2.4.1'
+  - '2.3.4'
+  - '2.2.7'
+gemfile:
+- gemfiles/Gemfile.rails-5-1
+- gemfiles/Gemfile.rails-5-0
+- gemfiles/Gemfile.rails-4-2
