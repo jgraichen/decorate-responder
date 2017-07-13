@@ -1,17 +1,12 @@
 require 'minitest/autorun'
 require 'bundler'
 
-Bundler.setup
-
 # Configure Rails
-ENV["RAILS_ENV"] = "test"
+ENV['RAILS_ENV'] = 'test'
 
-require 'active_support'
-require 'action_controller'
-if ENV['RAILS_VERSION'] >= '4.2'
-  require 'responders'
-end
-require 'draper'
+Bundler.require
+
+require 'action_dispatch'
 
 require 'decorate-responder'
 
@@ -22,7 +17,7 @@ Responders::Routes.draw do
 end
 
 class ActiveSupport::TestCase
-  setup do @routes = Responders::Routes end
+  setup { @routes = Responders::Routes }
 end
 
 class AppResponder < ActionController::Responder
@@ -43,36 +38,40 @@ end
 class UserDecorator < Draper::Decorator
   decorates User
 
-  def as_json(options)
-    { :class => "UserDecorator" }
+  def as_json(_options)
+    { class: 'UserDecorator' }
   end
 end
 
 class MyDecorator < Draper::Decorator
-  def as_json(options)
-    { :class => "MyDecorator" }
+  def as_json(_options)
+    { class: 'MyDecorator' }
   end
 end
 
 class AppController < ActionController::Base
   include Responders::Routes.url_helpers
 
+  cattr_accessor :resource
+
   self.responder = AppResponder
   respond_to :json
 
   def index
-    respond_with params[:resource]
+    respond_with self.class.resource
   end
 end
 
 class ExplicitDecorateController < ActionController::Base
   include Responders::Routes.url_helpers
 
+  cattr_accessor :resource
+
   self.responder = AppResponder
   respond_to :json
 
   def index
-    respond_with params[:resource]
+    respond_with self.class.resource
   end
 
   def decorate(resource)
