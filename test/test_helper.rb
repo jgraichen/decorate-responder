@@ -14,6 +14,7 @@ Responders::Routes = ActionDispatch::Routing::RouteSet.new
 Responders::Routes.draw do
   get '/index' => 'app#index'
   get '/ex' => 'explicit_decorate#index'
+  get '/ctx' => 'decorate_with_context#index'
 end
 
 class ActiveSupport::TestCase
@@ -30,8 +31,8 @@ class User
     @name = name
   end
 
-  def decorate
-    UserDecorator.new self
+  def decorate(*args)
+    UserDecorator.new self, *args
   end
 end
 
@@ -39,7 +40,7 @@ class UserDecorator < Draper::Decorator
   decorates User
 
   def as_json(_options)
-    { class: 'UserDecorator' }
+    { class: 'UserDecorator' }.merge(context)
   end
 end
 
@@ -76,5 +77,22 @@ class ExplicitDecorateController < ActionController::Base
 
   def decorate(resource)
     MyDecorator.new(resource)
+  end
+end
+
+class DecorateWithContextController < ActionController::Base
+  include Responders::Routes.url_helpers
+
+  cattr_accessor :resource
+
+  self.responder = AppResponder
+  respond_to :json
+
+  def index
+    respond_with self.class.resource
+  end
+
+  def decoration_context
+    {foo: 'bar'}
   end
 end

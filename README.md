@@ -42,7 +42,20 @@ end
 
 If you're using a decorator gem such as [draper](https://github.com/drapergem/draper) that injects a `decorate` method into your resources they will get decorated automatically.
 
-You can also explicitly decorate your resources by adding a `decorate` method to your controller:
+When using draper, you may want to pass a [context hash](https://github.com/drapergem/draper#adding-context) from the controller to the decorator.
+You can provide this context by adding a (public!) `decoration_context` method to the controller:
+
+```ruby
+class AppController
+  responders Responder::DecorateResponder
+  
+  def decoration_context
+    { color: false }
+  end
+end
+```
+
+If you want to build even more advanced decoration logic, you can also explicitly decorate your resources by adding a `decorate` method to your controller:
 
 ```ruby
 class AppController
