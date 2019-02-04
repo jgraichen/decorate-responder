@@ -11,3 +11,7 @@ gemfile:
 - gemfiles/Gemfile.rails-5-1
 - gemfiles/Gemfile.rails-5-0
 - gemfiles/Gemfile.rails-4-2
+jobs:
+  exclude:
+  - rvm: 2.6.1
+    gemfile: gemfiles/Gemfile.rails-4-2
