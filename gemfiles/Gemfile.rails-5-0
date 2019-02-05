@@ -4,4 +4,3 @@ source 'https://rubygems.org'
 self.instance_eval Bundler.read_file 'Gemfile'
 
 gem 'actionpack', '~> 5.0.0'
-gem 'responders', '~> 2.0'

@@ -4,6 +4,6 @@ gem 'draper'
 # draper requires activemodel
 gem 'activemodel'
 
-# Specify your gem's dependencies in acfs.gemspec
+# Load the actual gem's dependencies from decorate-responder.gemspec
 gemroot = File.dirname File.absolute_path __FILE__
 gemspec path: gemroot

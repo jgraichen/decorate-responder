@@ -8,6 +8,7 @@ Bundler.require
 
 require 'action_dispatch'
 
+require 'responders'
 require 'decorate-responder'
 
 Responders::Routes = ActionDispatch::Routing::RouteSet.new
