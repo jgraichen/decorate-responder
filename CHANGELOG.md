@@ -13,4 +13,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 - Remove support for Rails &lt; 4.2 (#4)
 
-[unreleased]: https://github.com/:jgraichen/decorate-responder/compare/v2.0.0...HEAD
+[unreleased]: https://github.com/jgraichen/decorate-responder/compare/v2.0.0...HEAD
