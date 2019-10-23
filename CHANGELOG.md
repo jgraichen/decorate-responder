@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.1.0] - 2019-10-23
+### Added
+- Added support for Rails 6.0
+
 ## 2.0.0 - 2019-02-18
 ### Added
 - Add #decoration_context controller method (#5)
@@ -13,4 +17,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 - Remove support for Rails &lt; 4.2 (#4)
 
-[unreleased]: https://github.com/jgraichen/decorate-responder/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/jgraichen/decorate-responder/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/jgraichen/decorate-responder/compare/v2.0.0...v2.1.0
