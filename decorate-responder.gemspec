@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['jg@altimos.de']
   gem.description   = 'A Rails responder to decorate resources.'
   gem.summary       = 'A Rails responder to decorate resources.'
-  gem.homepage      = ''
+  gem.homepage      = 'https://github.com/jgraichen/decorate-responder'
   gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
